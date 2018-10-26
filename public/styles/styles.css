@@ -1,3 +1,26 @@
-.list-group-item {
-  line-height: 2.5;
+#loginBtn {
+  padding: 0;
+  background: transparent;
+  border: solid 1px #64b5f6;
+}
+
+#navbar {
+  background: transparent;
+  border-bottom: solid 1px #ccc;
+}
+
+.waves-effect.waves-custom .waves-ripple {
+  background-color: #64b5f6;
+}
+
+.p-1 {
+  padding: 2%
+}
+
+.p-2 {
+  padding: 4%;
+}
+
+.p-3 {
+  padding: 6%;
 }
