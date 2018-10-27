@@ -9,9 +9,11 @@ CREATE TABLE crawls (
     name VARCHAR(30) NOT NULL,
     street VARCHAR(45) NULL,
     zip INT(5) NULL,
+    neighborhood VARCHAR(50) NULL,
     cat1 VARCHAR(30) NULL,
     cat2 VARCHAR(30) NULL,
     website VARCHAR(100) NULL,
     phone INT(10) NULL,
+    checked BOOLEAN default false,
     PRIMARY KEY (id)
 );
