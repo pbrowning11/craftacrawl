@@ -244,10 +244,15 @@
   border-radius: 4px;
 }
 
-#title {
+#homeTitle {
   color: hsl(204, 86%, 53%);
   font-size: 46px;
   margin-top: 12rem;
+  font-family: "Georgia", serif;
+}
+
+#regTitle {
+  font-size: 46px;
   font-family: "Georgia", serif;
 }
 
@@ -275,9 +280,27 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+#backdrop {
   background: rgba(194, 223, 255, 0.45)
 }
 
 .navbarLinks {
   color: hsl(204, 86%, 53%);
+}
+
+.neighborhood {
+  font-size: 20px;
+  padding-right: 16rem;
+}
+
+.category {
+  font-size: 20px;
+  padding-right: 19rem;
+}
+
+.numberOf {
+  font-size: 20px;
+  padding-right: 14.7rem;
 }
