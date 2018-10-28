@@ -327,3 +327,12 @@ body {
 .category2 {
    padding-right: 17.4rem;
 }
+
+.title404 {
+  font-size: 108px;
+}
+
+.subtitle404 {
+  font-size: 42px;
+  color: hsl(204, 86%, 53%);
+}
