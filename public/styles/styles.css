@@ -244,6 +244,12 @@
   border-radius: 4px;
 }
 
+#signupBtn {
+  border: solid 1px hsl(204, 86%, 53%);
+  color: hsl(204, 86%, 53%);
+  border-radius: 4px;
+}
+
 #homeTitle {
   color: hsl(204, 86%, 53%);
   font-size: 46px;
@@ -262,7 +268,7 @@
 }
 
 #titleContainer {
-  margin-bottom: 14rem;
+  margin-bottom: 12rem;
 }
 
 .crawlChoice {
@@ -291,16 +297,33 @@ body {
 }
 
 .neighborhood {
-  font-size: 20px;
-  padding-right: 16rem;
+  font-size: 16px;
+  padding-right: 15.8rem;
 }
 
 .category {
-  font-size: 20px;
-  padding-right: 19rem;
+  font-size: 16px;
+  padding-right: 18.2rem;
 }
 
 .numberOf {
-  font-size: 20px;
-  padding-right: 14.7rem;
+  font-size: 16px;
+  padding-right: 14.9rem;
+}
+
+.phColor::placeholder {
+  color: hsl(204, 86%, 53%);
+  opacity: 0.5;
+}
+
+.barName {
+  padding-right: 17.6rem;
+}
+
+.yourEmail {
+  padding-right: 16.5rem;
+}
+
+.category2 {
+   padding-right: 17.4rem;
 }
