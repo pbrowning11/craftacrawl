@@ -63,13 +63,11 @@ function toDatabase() {
       
     }
   console.log(colletedBarArray)
-
-  var postData= {
-    crawlName: groupname,
-    barList: colletedBarArray
-  }
-  console.log(postData)
     $.post("/api/posts/", {crawlName:groupname,barList:colletedBarArray.toString() })
+    .then(function() {
+      console.log("I am here")
+      window.location.href = "/crawl/"+groupname;
+    });
 }
 
 $("#submitBarBtn").on("click", submitBar);
