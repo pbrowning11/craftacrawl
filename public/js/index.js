@@ -63,7 +63,7 @@ function toDatabase() {
       
     }
   console.log(colletedBarArray)
-    $.post("/api/posts/", {crawlName:groupname,barList:colletedBarArray.toString() })
+    $.post("/api/googleapi/", {crawlName:groupname,barList:colletedBarArray.toString()})
     .then(function() {
       console.log("I am here")
       window.location.href = "/crawl/"+groupname;
