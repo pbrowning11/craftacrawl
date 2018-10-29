@@ -3,12 +3,8 @@ var db = require("../models");
 module.exports = function (app) {
   // Get all examples
   app.post("/api/posts", function (req, res) {
-
-    console.log(req.body.barList);
-    db.Crawl.create({
-      crawlName: req.body.crawlName,
-      barList: req.body.barList.toString()
-    })
+    console.log(req.body);
+    db.Crawl.create(req.body)
       .then(function (dbcrawl) {
         res.json(dbcrawl);
       });
@@ -28,13 +24,22 @@ module.exports = function (app) {
             id: position
           }
         }).then(function (barInfo) {
-          console.log(barInfo.dataValues)
           barArray.push(barInfo.dataValues)
         });
       });
 
       console.log(barArray);
-      res.json(barArray);
+      // res.render("results", { bars: barArray });
     });
   });
+  app.get("/api/neighborhood/:hood", function(req, res) {
+    console.log(req.params.hood)
+    db.Bar.findAll({
+      where: {
+        neighborhood: req.params.hood
+      }
+    }).then(function(sendthehood) {
+      res.render("hood", { hood: sendthehood });
+    });
+  })
 }
