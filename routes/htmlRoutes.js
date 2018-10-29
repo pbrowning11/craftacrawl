@@ -19,7 +19,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../views/thanks.html"));
   });
 
-  app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/404.html"));
-  });
+  // app.get("*", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../views/404.html"));
+  // });
 };

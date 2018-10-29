@@ -4,6 +4,7 @@ module.exports = function (app) {
   // Get all examples
   app.post("/api/posts", function (req, res) {
 
+
     console.log(req.body.barList);
     // Google Maps API Query Start    
     var apikey = "AIzaSyDu0Qtc37kImb-6q2CGWi-T9DeM0s80ZIk&"
@@ -17,13 +18,6 @@ module.exports = function (app) {
     }
     var queryurl = "https://maps.googleapis.com/maps/api/directions/json?" + params + apikey;
 
-
-
-
-
-
-
-
     db.Crawl.create({
         crawlName: req.body.crawlName,
         barList: req.body.barList.toString()
@@ -31,29 +25,45 @@ module.exports = function (app) {
       .then(function (dbcrawl) {
         res.json(dbcrawl);
       });
+    
+    console.log(req.body);
+    db.Crawl.create(req.body).then(function (dbcrawl) {
+      res.json(dbcrawl);
+    });
+
   });
   app.get("/crawl/:crawl", function (req, res) {
-
     db.Crawl.findOne({
       where: {
         crawlName: req.params.crawl
       }
     }).then(function (crawlInfo) {
-      var barArray = []
-      var crawlArray = JSON.parse("[" + crawlInfo.dataValues.barList + "]")
+      var barArray = [];
+      var promises = [];
+      var crawlArray = JSON.parse("[" + crawlInfo.dataValues.barList + "]");
+      console.log(crawlArray)
       crawlArray.forEach(function (position) {
-        db.Bar.findOne({
-          where: {
-            id: position
-          }
-        }).then(function (barInfo) {
-          console.log(barInfo.dataValues)
-          barArray.push(barInfo.dataValues)
-        });
+        promises.push(
+          db.Bar.findOne({
+            where: {
+              id: position
+            }
+          }))
       });
-
-      console.log(barArray);
-      res.json(barArray);
+      Promise.all(promises).then(function (barsAr) {
+        console.log(barArray);
+        res.render("results", { bars: barsAr });
+      });
     });
   });
+  app.get("/api/neighborhood/:hood", function (req, res) {
+    console.log(req.params.hood)
+    db.Bar.findAll({
+      where: {
+        neighborhood: req.params.hood
+      }
+    }).then(function (sendthehood) {
+      res.render("hood", { hood: sendthehood });
+    });
+  })
 }
