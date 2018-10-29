@@ -12,9 +12,7 @@ module.exports = function (app, passport) {
       failureRedirect: "/signup"
     })
   );
-
- 
-
+  
   app.post(
     "/signin.html",
     passport.authenticate("local-signin", {

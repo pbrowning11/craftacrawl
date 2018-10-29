@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Craft-A-Crawl</title>
+  <title>Create</title>
 
   <!-- Links for Bulma, Fontawesome and my custom CSS respectively -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=">
 
 </head>
-<body id="backdrop">
+<body>
 <nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -36,29 +36,52 @@
         <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
       </div>
       <div class="buttons m-r-md">
-        <a href="/signup" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Sign-up &nbsp;&nbsp;</a>
         <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
       </div>
     </div>
   </div>
 </nav>
 
-<div id="titleContainer" class="columns is-centered">
-  <div class="column is-one-quarter has-text-centered">
-    <p id="homeTitle" class="has-text-weight-semibold">CRAFT A CRAWL</p>
-    <p id="subTitle">Before you walk, plan your crawl.</p>
+<div class="m-b-lg m-t-xl columns is-centered">
+  <div class="column is-half has-text-centered">
+    <p id="regTitle" class="has-text-weight-semibold">Create a Crawl</p>
   </div>
 </div>
 <div class="columns is-centered">
-  <div class="column is-three-quarters">
-    <div class="columns">
-      <div class="column is-half has-text-centered">
-        <a href="/create" id="createCrawl" class="is-fullwidth crawlChoice">CREATE CRAWL<span class="plus">+</span></a>
+  <div class="column is-one-quarter has-text-centered">
+    <form>
+
+      <label for="neighborhood" class="neighborhood">Neighborhood</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select class="has-text-info" name="neighborhood" id="neighborhood">
+          <option value="error">Select an option</option>
+          <option value="noda">NoDa</option>
+        </select>
       </div>
-      <div class="column is-half has-text-centered">
-        <a href="/join" id="joinCrawl" class="is-fullwidth crawlChoice">JOIN CRAWL<span class="plus">+</span></a>
+
+      <label for="category" class="category">Category</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select class="has-text-info" name="category" id="category">
+          <option value="error">Select an option</option>
+          <option value="cocktail">Cocktail</option>
+        </select>
       </div>
-    </div>
+
+      <label for="numberOf" class="numberOf">Number of bars?</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select class="has-text-info" name="numberOf" id="numberOf">
+          <option value="error">Select an option</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+
+      <button class="button is-medium is-rounded is-outlined is-info m-t-lg">&nbsp;&nbsp;Submit&nbsp;&nbsp;</button>
+    </form>
   </div>
 </div>
 

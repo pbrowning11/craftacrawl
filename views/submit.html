@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Submit</title>
+
+  <!-- Links for Bulma, Fontawesome and my custom CSS respectively -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+        crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
+
+  <!-- Added Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=">
+
+</head>
+
+<body>
+<nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <a href="/" class="navbarLinks is-size-5">HOME</a>
+      </div>
+      <div class="navbar-item">
+        <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
+      </div>
+      <div class="buttons m-r-md">
+        <a id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="m-b-lg m-t-xl columns is-centered">
+  <div class="column is-half has-text-centered">
+    <p id="regTitle" class="has-text-weight-semibold">Submit a New Bar</p>
+  </div>
+</div>
+<div class="columns is-centered">
+  <div class="column is-one-quarter has-text-centered">
+    <form>
+
+      <label for="Bar-Name" class="barName">Bar Name</label>
+      <div class="field">
+        <div class="control">
+          <input id="Bar-Name" class="input is-info is-fullwidth is-rounded is-large m-t-md m-b-lg phColor" type="text"
+                 placeholder="Bar Name">
+        </div>
+      </div>
+      <label for="Address" class="category">Address</label>
+      <div class="field">
+        <div class="control">
+          <input id="Address" class="input is-info is-fullwidth is-rounded is-large m-t-md m-b-lg phColor" type="text"
+                 placeholder="Address">
+        </div>
+      </div>
+      <label for="Phone-Number" class="numberOf">Phone Number</label>
+      <div class="field">
+        <div class="control">
+          <input id="Phone-Number" class="input is-info is-fullwidth is-rounded is-large m-t-md m-b-lg phColor" type="text"
+                 placeholder="555-555-5555">
+        </div>
+      </div>
+      <label for="E-Mail" class="yourEmail">Your E-Mail</label>
+      <div class="field">
+        <div class="control">
+          <input id="E-Mail" class="input is-info is-fullwidth is-rounded is-large m-t-md m-b-lg phColor" type="text"
+                 placeholder="Your E-Mail">
+        </div>
+      </div>
+      <label for="category" class="category2">Category</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select class="has-text-info" name="category" id="category">
+          <option value="error">Select an option</option>
+          <option value="cocktail">Cocktail</option>
+        </select>
+      </div>
+      <button class="button is-medium is-rounded is-outlined is-info m-t-lg">&nbsp;&nbsp;Submit&nbsp;&nbsp;</button>
+    </form>
+  </div>
+</div>
+
+<script src="../public/js/index.js"></script>
+<script src="../public/js/navbarJS.js"></script>
+</body>
+
+</html>

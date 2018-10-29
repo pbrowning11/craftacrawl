@@ -4,7 +4,7 @@ CREATE DATABASE CraftACrawldb;
 
 USE CraftACrawldb;
 
-CREATE TABLE crawls (
+CREATE TABLE bars (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
     street VARCHAR(45) NULL,
@@ -17,3 +17,11 @@ CREATE TABLE crawls (
     checked BOOLEAN default false,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE crawl (
+	id INT NOT NULL AUTO_INCREMENT,
+    crawlName VARCHAR(30) NOT NULL,
+    barList VARCHAR(45) NULL,
+    PRIMARY KEY (id)
+    );
+
