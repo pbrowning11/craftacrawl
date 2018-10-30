@@ -3,20 +3,25 @@
  
 <head>
     <title></title>
+
+    
 </head>
  
 <body>
-    <form id="signup" name="signup" method="post" action="/signup">
+    <form>
         <label for="email">Email Address</label>
-        <input class="text" name="email" type="email" />
+        <input class="text" id="email" type="email" />
         <label for="firstname">Firstname</label>
-        <input name="firstname" type="text" />
+        <input type="text" id="fName" />
         <label for="lastname">Lastname</label>
-        <input name="lastname" type="text" />
+        <input type="text" id="lName" />
         <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign Up" />
+        <input type="password" id="pWord" />
+        <button class="btn" id="signage">Sign Up</button>
     </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/signup.js"></script>
  
 </body>
  
