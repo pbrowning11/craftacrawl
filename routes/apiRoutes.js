@@ -40,18 +40,6 @@ module.exports = function (app) {
       }
     }).then(function (crawlInfo) {
       var barArray = [];
-<<<<<<< HEAD
-      var crawlArray = JSON.parse("[" + crawlInfo.dataValues.barList + "]");
-      crawlArray.forEach(function(position) {
-        db.Bar.findOne({
-          where: {
-            id: position
-          }
-        }).then(function (barInfo) {
-          console.log(barInfo.dataValues)
-          barArray.push(barInfo.dataValues)
-        });
-=======
       var promises = [];
       var crawlArray = JSON.parse("[" + crawlInfo.dataValues.barList + "]");
       console.log(crawlArray)
@@ -66,11 +54,9 @@ module.exports = function (app) {
       Promise.all(promises).then(function (barsAr) {
         console.log(barArray);
         res.render("results", { bars: barsAr });
->>>>>>> 4fb79273a0179a357baadb91773bbae77c3c5d82
       });
     });
   });
-<<<<<<< HEAD
 
   app.post("/api/signin", passport.authenticate("local", {
     successRedirect: "/home",
@@ -95,7 +81,6 @@ module.exports = function (app) {
     }).catch(function(err) {
       console.log(err);
       res.json(err);
-=======
   app.get("/api/neighborhood/:hood", function (req, res) {
     console.log(req.params.hood)
     db.Bar.findAll({
@@ -104,7 +89,6 @@ module.exports = function (app) {
       }
     }).then(function (sendthehood) {
       res.render("hood", { hood: sendthehood });
->>>>>>> 4fb79273a0179a357baadb91773bbae77c3c5d82
     });
   })
 }
