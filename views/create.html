@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
         integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
 
   <!-- Added Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=">
@@ -51,41 +51,34 @@
   <div class="column is-one-quarter has-text-centered">
     <form>
 
-      <label for="neighborhood" class="neighborhood">Neighborhood</label>
-      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
-        <select class="has-text-info" name="neighborhood" id="neighborhood">
-          <option value="error">Select an option</option>
-          <option value="noda">NoDa</option>
-        </select>
-      </div>
+        <label for="bar1" class="barNumber">Desired Neighborhood or Category</label>
+        <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+          <select class="has-text-info" name="bar1" id="bar1">
+            <option value="">Select an option</option>
+            <option value="">Neighborhood</option>
+            <option value="noda">&nbsp;&nbsp;&nbsp;NoDa</option>
+            <option value="plazamidwood">&nbsp;&nbsp;&nbsp;Plaza Midwood</option>
+            <option value="dilworth">&nbsp;&nbsp;&nbsp;Dilworth</option>
+            <option value="southend">&nbsp;&nbsp;&nbsp;Southend</option>
+            <option value="uptownfirstward">&nbsp;&nbsp;&nbsp;Uptown, First Ward</option>
+            <option value="uptownsecondward">&nbsp;&nbsp;&nbsp;Uptown, Second Ward</option>
+            <option value="uptownthirdward">&nbsp;&nbsp;&nbsp;Uptown, Third Ward</option>
+            <option value="uptownfourthward">&nbsp;&nbsp;&nbsp;Uptown, Fourth Ward</option>
+            <option value="">Category</option>
+            <option value="neighborhood">&nbsp;&nbsp;&nbsp;Neighborhood bars</option>
+            <option value="cocktail">&nbsp;&nbsp;&nbsp;Cocktail bars</option>
+            <option value="club">&nbsp;&nbsp;&nbsp;Clubs</option>
+            <option value="brewery">&nbsp;&nbsp;&nbsp;Breweries</option>
+          </select>
+        </div>
 
-      <label for="category" class="category">Category</label>
-      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
-        <select class="has-text-info" name="category" id="category">
-          <option value="error">Select an option</option>
-          <option value="cocktail">Cocktail</option>
-        </select>
-      </div>
 
-      <label for="numberOf" class="numberOf">Number of bars?</label>
-      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
-        <select class="has-text-info" name="numberOf" id="numberOf">
-          <option value="error">Select an option</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </div>
-
-      <button class="button is-medium is-rounded is-outlined is-info m-t-lg">&nbsp;&nbsp;Submit&nbsp;&nbsp;</button>
+        <a id="createCrawlBtn" class="button is-medium is-rounded is-outlined is-info m-t-lg">&nbsp;&nbsp; Submit &nbsp;&nbsp;</a>
     </form>
   </div>
 </div>
 
-<script src="../public/js/index.js"></script>
-<script src="../public/js/navbarJS.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/navbarJS.js"></script>
 </body>
 </html>

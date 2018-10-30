@@ -1,0 +1,106 @@
+<nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+       data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <a href="/" class="navbarLinks is-size-5">HOME</a>
+      </div>
+      <div class="navbar-item">
+        <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
+      </div>
+      <div class="buttons m-r-md">
+        <a href="/signup" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Sign-up &nbsp;&nbsp;</a>
+        <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="columns is-centered">
+  <div class='column is-one-quarter has-text-centered'>
+    <p id="regTitle" class="has-text-weight-semibold m-b-lg">Bar Selection</p>
+    <form>
+      <label for="bar1" class="crawlName">Select the first bar to go to</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select id='bar1' class="has-text-info">
+          <option value="default">Choose a bar</option>
+          {{#each hood}}
+            <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <label for="bar2" class="crawlName">Select the bar to finish at</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select id='bar2' class="has-text-info">
+          <option value="default">Choose a bar</option>
+          {{#each hood}}
+            <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <label for="bar3" class="barNumber">Add another bar</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select id='bar3' class="has-text-info">
+          <option value="default">Choose a bar</option>
+          {{#each hood}}
+            <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <label for="bar4" class="barNumber">Add another bar</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select id='bar4' class="has-text-info">
+          <option value="default">Choose a bar</option>
+          {{#each hood}}
+            <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <label for="bar5" class="barNumber">Add another bar</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select id='bar5' class="has-text-info">
+          <option value="default">Choose a bar</option>
+          {{#each hood}}
+            <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <label for="bar6" class="barNumber">Add another bar</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select id='bar6' class="has-text-info">
+          <option value="default">Choose a bar</option>
+          {{#each hood}}
+            <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <label for="bar7" class="barNumber">Add another bar</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select id='bar7' class="has-text-info">
+          <option value="default">Choose a bar</option>
+          {{#each hood}}
+            <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <label for="bar8" class="barNumber">Add another bar</label>
+      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+        <select id='bar8' class="has-text-info">
+          <option value="default">Choose a bar</option>
+          {{#each hood}}
+            <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <button class="button is-medium is-rounded is-outlined is-info m-t-lg" type="submit" id="barSubmit">Submit</button>
+    </form>
+  </div>
+</div>

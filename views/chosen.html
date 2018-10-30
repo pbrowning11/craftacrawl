@@ -6,17 +6,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Thanks</title>
+    <title>Craft A Crawl</title>
 
     <!-- Links for Bulma, Fontawesome and my custom CSS respectively -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
 
     <!-- Added Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+                         * element that contains the map. */
+        #map {
+            height: 800px;
+            width: 800px;
+        }
 
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,25 +59,24 @@
         </div>
     </nav>
 
-    <div class="m-b-lg m-t-xl columns is-centered">
-        <div class="column is-half has-text-centered">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p id="regTitle" class="has-text-weight-semibold">Thanks for submitting and helping make our app better!</p>
-        </div>
-    </div>
-    <div class="columns is-centered">
-        <div class="column is-one-quarter has-text-centered">
+    <div id="map"></div>
+    <script>
+        var map;
 
-        </div>
-    </div>
-
-    <script src="/js/index.js"></script>
-    <script src="/js/navbarJS.js"></script>
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 35.227085,
+                    lng: -80.843124
+                },
+                zoom: 8
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu0Qtc37kImb-6q2CGWi-T9DeM0s80ZIk&callback=initMap"
+        async defer></script>
+    <script src="../public/js/index.js"></script>
+    <script src="../public/js/navbarJS.js"></script>
 </body>
 
 </html>
