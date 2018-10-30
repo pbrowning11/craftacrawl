@@ -29,40 +29,18 @@ var API = {
   }
 };
 
-function submitBar(event) {
-  event.preventDefault();
-  const bar = {
-    barName: $("#Bar-Name").val().trim(),
-    address: $("#Address").val().trim(),
-    phoneNumber: $("#Phone-Number").val().trim(),
-    email: $("#E-Mail").val().trim(),
-    category: $("#category").val().trim()
-  }
-  API.submitBar(bar)
-}
-
-function createCrawl(event) {
-  event.preventDefault();
-  const crawl = {
-    neighborhood: $("#neighborhood").val().trim(),
-    category: $("#category").val().trim(),
-    numberOf: $("#numberOf").val().trim()
-  }
-  API.createCrawl(crawl)
-}
-
 function toDatabase() {
   var groupname=Math.floor(Math.random()*90000) + 10000
   var colletedBarArray = []
     for (let l = 1; l <= 8; l++) {
       if($("#bar"+l).val()!=="default"){
         var tempHolder=parseInt($('#bar'+l).val().trim())
-        console.log(tempHolder)
-        colletedBarArray.push(tempHolder)
+        console.log(tempHolder);
+        colletedBarArray.push(tempHolder);
       }
-      
+
     }
-  console.log(colletedBarArray)
+  console.log(colletedBarArray);
     $.post("/api/posts/", {crawlName:groupname,barList:colletedBarArray.toString() })
     .then(function() {
       console.log("I am here")
@@ -70,6 +48,10 @@ function toDatabase() {
     });
 }
 
-$("#submitBarBtn").on("click", submitBar);
-$("#createCrawlBtn").on("click", createCrawl);
+function loadBarSelection() {
+  let choice = $("#neighborhood").val();
+  window.location.href = "/api/neighborhood/" + choice;
+}
+
+$("#createCrawlBtn").on("click", loadBarSelection);
 $(document).on("click", "button", toDatabase);
