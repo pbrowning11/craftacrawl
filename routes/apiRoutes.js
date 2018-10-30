@@ -124,6 +124,30 @@ module.exports = function (app) {
       });
     });
   });
+
+  app.post("/api/signin", passport.authenticate("local", {
+    successRedirect: "/home",
+    failureRedirect: "/signin"
+  }));
+
+  
+  app.post("/api/signup", function(req,res) {
+    var newUser = req.body.data
+    console.log(req.body.data)
+    db.User.findOrCreate({
+      where: {
+      email: newUser.email,
+      }, 
+      defaults: {
+      firstName: newUser.firstName,
+      lastName: newUser.lastName,
+      Password: newUser.password
+      }
+    }).then(function() {
+      res.redirect(307, "/api/signin");
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
   app.get("/api/neighborhood/:hood", function (req, res) {
     console.log(req.params.hood)
     db.Bar.findAll({

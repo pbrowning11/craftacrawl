@@ -20,7 +20,12 @@
     "local": "^0.3.3",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
+<<<<<<< HEAD
     "request": "^2.88.0",
+=======
+    "passport-local": "^1.0.0",
+    "passport-session": "^1.0.2",
+>>>>>>> ce88936502c3bb70bc6f1575374d924e2a32898a
     "sequelize": "^4.38.0"
   },
   "devDependencies": {
