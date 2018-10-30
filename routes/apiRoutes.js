@@ -20,13 +20,13 @@ module.exports = function (app) {
     var queryurl = "https://maps.googleapis.com/maps/api/directions/json?" + params + apikey;
 
     db.Crawl.create({
-        crawlName: req.body.crawlName,
-        barList: req.body.barList.toString()
-      })
+      crawlName: req.body.crawlName,
+      barList: req.body.barList.toString()
+    })
       .then(function (dbcrawl) {
         res.json(dbcrawl);
       });
-    
+
     console.log(req.body);
     db.Crawl.create(req.body).then(function (dbcrawl) {
       res.json(dbcrawl);
@@ -63,24 +63,26 @@ module.exports = function (app) {
     failureRedirect: "/signin"
   }));
 
-  
-  app.post("/api/signup", function(req,res) {
+
+  app.post("/api/signup", function (req, res) {
     var newUser = req.body.data
     console.log(req.body.data)
     db.User.findOrCreate({
       where: {
-      email: newUser.email,
-      }, 
+        email: newUser.email,
+      },
       defaults: {
-      firstName: newUser.firstName,
-      lastName: newUser.lastName,
-      Password: newUser.password
+        firstName: newUser.firstName,
+        lastName: newUser.lastName,
+        Password: newUser.password
       }
-    }).then(function() {
+    }).then(function () {
       res.redirect(307, "/api/signin");
-    }).catch(function(err) {
+    }).catch(function (err) {
       console.log(err);
       res.json(err);
+    })
+  })
   app.get("/api/neighborhood/:hood", function (req, res) {
     console.log(req.params.hood)
     db.Bar.findAll({
