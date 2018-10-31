@@ -165,4 +165,16 @@ module.exports = function(app) {
       });
     });
   });
+  app.get("/api/category/:cat", function(req, res) {
+    console.log(req.params.hood);
+    db.Bar.findAll({
+      where: {
+        cat1: req.params.cat
+      }
+    }).then(function(sendthehood) {
+      res.render("hood", {
+        hood: sendthehood
+      });
+    });
+  });
 };
