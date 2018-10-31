@@ -1,19 +1,21 @@
-$("buttonSignIn").on("click", function(event) {
+$("#buttonSignIn").on("click", function (event) {
     event.preventDefault();
     var userData = {
-        email: $("emailSignIn").val().trim(),
-        password: $("pWordSignIn").val().trim()
+        email: $("#emailSignIn").val().trim(),
+        password: $("#pWordSignIn").val().trim()
     }
 
-    userLogin(userData);
-    $("emailSignIn").val("");
-    $("pWordSignIn").val("");
+    $.ajax({
+        url: "/api/login",
+        data: userData,
+        method: "POST"
+    }).then(function () {
+        window.location.assign("/")
+    })
 })
 
-function userLogin (user) {
-    $.post("/api/signin", {
-        data: user
-    }).then(function(result) {
-        console.log(result)
-    })
-}
+// $("#logout").on("click", function(event) {
+//     event.preventDefault();
+//     app.get("/logout");
+// })
+

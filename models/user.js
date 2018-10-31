@@ -21,11 +21,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  User.prototype.validpassword = function(password) {
-    return bCrypt.compareSync(password, this.password)
+  User.prototype.validPassword = function(password) {
+    return bCrypt.compareSync(password, this.Password)
   }
   User.hook("beforeCreate", function(user) {
-    user.password = bCrypt.hashSync(user.password, bCrypt.genSaltSync(10), null)
+    user.Password = bCrypt.hashSync(user.Password, bCrypt.genSaltSync(10), null)
   })
   return User;
 };

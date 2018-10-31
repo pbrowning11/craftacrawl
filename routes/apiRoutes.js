@@ -1,6 +1,6 @@
 var db = require("../models");
 var request = require("request");
-var passport = require("passport");
+var passport = require("../config/passport");
 var express = require("express")
 module.exports = function (app) {
 
@@ -144,11 +144,13 @@ module.exports = function (app) {
     });
   });
 
-  app.post("/api/signin", passport.authenticate("local", {
-    successRedirect: "/home",
-    failureRedirect: "/signin"
-  }));
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json("/")
+  });
 
+  // app.get("api/signin", function(req, res) {
+
+  // })
 
   app.post("/api/signup", function (req, res) {
     var newUser = req.body.data;
@@ -162,8 +164,8 @@ module.exports = function (app) {
         lastName: newUser.lastName,
         Password: newUser.password
       }
-    }).then(function () {
-      res.redirect(307, "/api/signin");
+    }).then(function (newUser) {
+      res.json(newUser)
     }).catch(function (err) {
       console.log(err);
       res.json(err);
@@ -171,6 +173,7 @@ module.exports = function (app) {
   });
   app.get("/api/neighborhood/:hood", function (req, res) {
     console.log(req.params.hood);
+    
     db.Bar.findAll({
       where: {
         neighborhood: req.params.hood
@@ -193,4 +196,10 @@ module.exports = function (app) {
       });
     });
   });
+
+  app.get("/logout", function(req, res){
+    req.logout();
+    req.session.destroy();
+    res.redirect("/")
+  })
 };
