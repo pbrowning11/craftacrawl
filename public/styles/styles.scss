@@ -1,5 +1,4 @@
 $primaryBlue: hsl(204, 86%, 53%);
-
 $sizeUnit: rem;
 $marginKey: 'm';
 $paddingKey: 'p';
@@ -20,11 +19,9 @@ $positions: (
     ('b', 'bottom'),
     ('l', 'left')
 );
-
 @function sizeValue($key, $value) {
     @return if($key == 'none', 0, $value + $sizeUnit);
 }
-
 @each $size in $sizes {
     $sizeKey: nth($size, 1);
     $sizeValue: nth($size, 2);
