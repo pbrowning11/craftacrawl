@@ -70,4 +70,3 @@ $("#predefined").click( function(event) {
   event.preventDefault();
   toWhere()
 })
-
