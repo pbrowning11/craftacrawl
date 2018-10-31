@@ -354,12 +354,13 @@
 .crawlChoice {
   color: #209cee;
   border: none;
-  font-size: 20px;
+  font-size: 26px;
+  font-family: "Arimo", sans-serif;
 }
 
 .plus {
   font-size: 32px;
-  margin-left: 10rem;
+  margin-left: 3rem;
 }
 
 body {

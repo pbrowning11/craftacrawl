@@ -1,34 +1,3 @@
-// The API object contains methods for each kind of request we'll make
-var API = {
-  submitBar: function (bar) {
-    return $.ajax({
-      type: "POST",
-      url: "/submit",
-      data: bar
-    });
-  },
-  createCrawl: function (crawl) {
-    return $.ajax({
-      type: "POST",
-      url: "/create",
-      data: crawl
-    })
-  },
-  getExamples: function () {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  editCrawl: function (info) {
-    return $.ajax({
-      type: "PUT",
-      url: "/edit",
-      data: info
-    })
-  }
-};
-
 function toDatabase() {
   var groupname=Math.floor(Math.random() * 10000000000);
   var colletedBarArray = []
@@ -61,6 +30,18 @@ function loadBarSelection() {
   window.location.href = "/api/neighborhood/" + choice;}
 }
 
+function submitBar() {
+  let newBar = {
+    barName: $("#Bar-Name").val().trim(),
+    address: $("#Address").val().trim()
+  }
+  console.log(newBar)
+  $.post("/submit", newBar)
+  .then(function() {
+    window.location.href = "/thanks"
+  });
+}
+
 $("#createCrawlBtn").on("click", loadBarSelection);
 $("#barSubmit").click( function(event) {
   event.preventDefault();
@@ -70,3 +51,7 @@ $("#predefined").click( function(event) {
   event.preventDefault();
   toWhere()
 })
+$("#submitBarBtn").click(function(event) {
+  event.preventDefault();
+  submitBar();
+});
