@@ -4,12 +4,18 @@ $("#buttonSignIn").on("click", function (event) {
         email: $("#emailSignIn").val().trim(),
         password: $("#pWordSignIn").val().trim()
     }
-    console.log(userData);
 
-    console.log("func check")
-    $.post("/api/signin", {
-        data: userData
+    $.ajax({
+        url: "/api/login",
+        data: userData,
+        method: "POST"
     }).then(function () {
         window.location.assign("/")
     })
 })
+
+// $("#logout").on("click", function(event) {
+//     event.preventDefault();
+//     app.get("/logout");
+// })
+

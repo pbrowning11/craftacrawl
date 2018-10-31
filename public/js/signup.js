@@ -20,7 +20,7 @@ function userSignUp(user) {
         data: user
     }).then(function (result) {
         console.log("hello")
-        window.location.assign("/")
+        window.location.assign("/login")
         console.log(result)
     }
     )

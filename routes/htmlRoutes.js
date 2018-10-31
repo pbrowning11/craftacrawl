@@ -23,7 +23,7 @@ module.exports = function(app) {
   app.get("/submit", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/submit.html"));
   });
-  app.get("/create", function (req, res) {
+  app.get("/create", isAuthenticated, function (req, res) {
     res.sendFile(path.join(__dirname, "../views/create.html"));
   });
   app.get("/choose", function (req, res) {

@@ -1,6 +1,6 @@
 var db = require("../models");
 var request = require("request");
-var passport = require("passport");
+var passport = require("../config/passport");
 var express = require("express")
 module.exports = function (app) {
 
@@ -144,24 +144,12 @@ module.exports = function (app) {
     });
   });
 
-  app.post("/api/signin", passport.authenticate("local"), function(req, res) {
-    // successRedirect: "/",
-    // failureRedirect: "/login"
-    console.log(req.body)
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json("/")
   });
 
   // app.get("api/signin", function(req, res) {
-  //   db.User.findOne({
-  //     where: {
-  //       email: req.body.email
-  //     }
-  //   }).then(function(user) {
-  //     if (user.password === req.body.password) {
-  //       res.redirect("/")
-  //     } else {
-  //       res.redirect("/login")
-  //     }
-  //   })
+
   // })
 
   app.post("/api/signup", function (req, res) {
@@ -208,4 +196,10 @@ module.exports = function (app) {
       });
     });
   });
+
+  app.get("/logout", function(req, res){
+    req.logout();
+    req.session.destroy();
+    res.redirect("/")
+  })
 };
