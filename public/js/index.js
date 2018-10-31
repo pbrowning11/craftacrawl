@@ -18,8 +18,11 @@ function toDatabase() {
 }
 function toWhere(){
   let wher = $("#chooseNeighborhood").val()
-  console.log(wher)
-  window.location.href = "/crawl/"+wher;
+  if (wher === "error") {
+    window.location.href = "/choose"
+  } else {
+    window.location.href = "/crawl/"+wher;
+  }
 }
 function loadBarSelection() {
   let choice = $("#neighborhood").val();
