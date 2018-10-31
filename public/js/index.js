@@ -30,7 +30,7 @@ var API = {
 };
 
 function toDatabase() {
-  var groupname=Math.floor(Math.random()*90000) + 10000
+  var groupname=Math.floor(Math.random() * 10000000000);
   var colletedBarArray = []
     for (let l = 1; l <= 8; l++) {
       if($("#bar"+l).val()!=="default"){
@@ -41,7 +41,7 @@ function toDatabase() {
 
     }
   console.log(colletedBarArray);
-    $.post("/api/posts/", {crawlName:groupname,barList:colletedBarArray.toString() })
+    $.post("/api/googleapi/", {crawlName:groupname,barList:colletedBarArray.toString() })
     .then(function() {
       console.log("I am here")
       window.location.href = "/crawl/"+groupname;
@@ -58,4 +58,7 @@ function loadBarSelection() {
 }
 
 $("#createCrawlBtn").on("click", loadBarSelection);
-$(document).on("click", "button", toDatabase);
+$("#barSubmit").click( function(event) {
+  event.preventDefault();
+  toDatabase()
+})
