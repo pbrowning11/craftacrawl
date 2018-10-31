@@ -59,8 +59,8 @@ module.exports = function (app) {
   });
 
   app.post("/api/signin", passport.authenticate("local", {
-    successRedirect: "/home",
-    failureRedirect: "/signin"
+    successRedirect: "/",
+    failureRedirect: "/login"
   }));
 
 
@@ -76,8 +76,8 @@ module.exports = function (app) {
         lastName: newUser.lastName,
         Password: newUser.password
       }
-    }).then(function () {
-      res.redirect(307, "/api/signin");
+    }).then(function (newUser) {
+      res.json(newUser)
     }).catch(function (err) {
       console.log(err);
       res.json(err);

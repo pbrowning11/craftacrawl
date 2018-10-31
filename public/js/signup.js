@@ -19,6 +19,8 @@ function userSignUp(user) {
     $.post("/api/signup", {
         data: user
     }).then(function (result) {
+        console.log("hello")
+        window.location.assign("/")
         console.log(result)
     }
     )

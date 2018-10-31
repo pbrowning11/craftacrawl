@@ -20,22 +20,11 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/thanks.html"));
   });
 
-  app.get("/", isAuthenticated, function (req, res) {
-
-    res.redirect("/home")
-  })
   app.get("/signup", function (req, res) {
-
     res.sendFile(path.join(__dirname, "../views/signup.html"));
   });
-  app.get("/signin", function (req, res) {
-
+  app.get("/login", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/signin.html"))
-
-
-    // app.get("*", function(req, res) {
-    //   res.sendFile(path.join(__dirname, "../views/404.html"));
-    // });
   });
 };
 

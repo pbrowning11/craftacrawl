@@ -1,19 +1,15 @@
-$("buttonSignIn").on("click", function(event) {
+$("#buttonSignIn").on("click", function (event) {
     event.preventDefault();
     var userData = {
-        email: $("emailSignIn").val().trim(),
-        password: $("pWordSignIn").val().trim()
+        email: $("#emailSignIn").val().trim(),
+        password: $("#pWordSignIn").val().trim()
     }
+    console.log(userData);
 
-    userLogin(userData);
-    $("emailSignIn").val("");
-    $("pWordSignIn").val("");
-})
-
-function userLogin (user) {
+    console.log("func check")
     $.post("/api/signin", {
-        data: user
-    }).then(function(result) {
-        console.log(result)
+        data: userData
+    }).then(function () {
+        window.location.assign("/")
     })
-}
+})
