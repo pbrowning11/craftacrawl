@@ -2,81 +2,79 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Craft A Crawl</title>
+  <title>Craft A Crawl</title>
 
-    <!-- Links for Bulma, Fontawesome and my custom CSS respectively -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
-        crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
+  <!-- Links for Bulma, Fontawesome and my custom CSS respectively -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
 
-    <!-- Added Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=">
-    <style>
-        /* Always set the map height explicitly to define the size of the div
+  <!-- Added Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=">
+  <style>
+    /* Always set the map height explicitly to define the size of the div
                          * element that contains the map. */
-        #map {
-            height: 800px;
-            width: 800px;
-        }
+    #map {
+      height: 800px;
+      width: 800px;
+    }
 
-        /* Optional: Makes the sample page fill the window. */
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+  <nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="/" class="navbarLinks is-size-5">HOME</a>
         </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <a href="/" class="navbarLinks is-size-5">HOME</a>
-                </div>
-                <div class="navbar-item">
-                    <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
-                </div>
-                <div class="buttons m-r-md">
-                    <a id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
-                </div>
-            </div>
+        <div class="navbar-item">
+          <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
         </div>
-    </nav>
+        <div class="buttons m-r-md">
+          <a id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    <div id="map"></div>
-    <script>
-        var map;
+  <div id="map"></div>
+  <script>
+    var map;
 
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: 35.227085,
-                    lng: -80.843124
-                },
-                zoom: 8
-            });
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu0Qtc37kImb-6q2CGWi-T9DeM0s80ZIk&callback=initMap"
-        async defer></script>
-    <script src="../public/js/index.js"></script>
-    <script src="../public/js/navbarJS.js"></script>
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: 35.227085,
+          lng: -80.843124
+        },
+        zoom: 8
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu0Qtc37kImb-6q2CGWi-T9DeM0s80ZIk&callback=initMap" async defer></script>
+  <script src="../public/js/index.js"></script>
+  <script src="../public/js/navbarJS.js"></script>
 </body>
 
 </html>

@@ -319,19 +319,19 @@
 }
 
 #loginBtn {
-  border: solid 1px rgb(240, 200, 8);
-  color: rgb(240, 200, 8);
+  border: solid 1px #f0c808;
+  color: #f0c808;
   border-radius: 4px;
 }
 
 #signupBtn {
-  border: solid 1px rgb(240, 200, 8);
-  color: rgb(240, 200, 8);
+  border: solid 1px #f0c808;
+  color: #f0c808;
   border-radius: 4px;
 }
 
 #homeTitle {
-  color: rgb(240, 200, 8);
+  color: #f0c808;
   font-size: 46px;
   margin-top: 12rem;
   font-family: "Georgia", serif;
@@ -340,11 +340,11 @@
 #regTitle {
   font-size: 46px;
   font-family: "Georgia", serif;
-  color: rgb(240, 200, 8);
+  color: #f0c808;
 }
 
 #subTitle {
-  color: rgb(240, 200, 8);
+  color: #f0c808;
   font-size: 26px;
 }
 
@@ -353,18 +353,18 @@
 }
 
 .crawlChoice {
-  color: rgb(240, 200, 8);
+  color: #f0c808;
   border: none;
   font-size: 28px;
 }
 
 .plus {
   font-size: 32px;
-  margin-left: 10rem;
+  margin-left: 5rem;
 }
 
 label {
-  color: rgb(240, 200, 8);
+  color: #f0c808;
 }
 
 body {
@@ -374,31 +374,28 @@ body {
   background-image: url("../img/backdrop.png");
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
 .handlebars {
-  background: rgb(24, 67, 76);
+  background: #18434c;
 }
 
 p {
-  color: rgb(240, 200, 8);
+  color: #f0c808;
 }
 
 .navbar {
   background: transparent;
 }
 
-#backdrop {}
-
 .navbarLinks {
-  color: rgb(240, 200, 8);
+  color: #f0c808;
 }
 
 .neighborhood {
   font-size: 16px;
   padding-right: 15.8rem;
-  color: rgb(240, 200, 8);
+  color: #f0c808;
 }
 
 .category {
@@ -412,7 +409,7 @@ p {
 }
 
 .phColor::placeholder {
-  color: rgb(240, 200, 8);
+  color: #f0c808;
   opacity: 0.5;
 }
 
@@ -434,7 +431,7 @@ p {
 
 .subtitle404 {
   font-size: 42px;
-  color: rgb(240, 200, 8);
+  color: #f0c808;
 }
 
 .handlebarName {
@@ -450,46 +447,47 @@ p {
 }
 
 .navbar-burger {
-  color: rgb(240, 200, 8);
+  color: #f0c808;
   text-align: center;
 }
 
 .button {
-  background: rgb(24, 67, 76, 20%);
+  background: #18434c;
 }
 
 .barName {
-  color: rgb(240, 200, 8);
-
+  color: #f0c808;
 }
 
 .select select {
-  background-color: rgb(24, 67, 76, 60%);
+  background-color: #18434c;
 }
 
 .has-text-info {
-  color: rgb(240, 200, 8) !important;
+  color: #f0c808 !important;
 }
 
 .button.is-info.is-outlined {
-  color: rgb(240, 200, 8);
-  border-color: rgb(240, 200, 8);
+  color: #f0c808;
+  border-color: #f0c808;
 }
 
 .input,
 .textarea {
-  background-color: rgb(24, 67, 76, 20%);
+  background-color: #18434c;
   border-color: #dbdbdb;
-  color: rgb(240, 200, 8);
-  box-shadow: inset 0 1px 2px rgba(10, 10, 10, .1);
+  color: #f0c808;
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   max-width: 100%;
   width: 100%;
 }
 
 @media screen and (max-width: 1087px) {
   .navbar-menu {
-    background-color: rgb(24, 67, 76, 60%);
-    box-shadow: 0 8px 16px rgba(10, 10, 10, .1);
+    background-color: #18434c;
+    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: .5rem 0;
   }
 }
+
+/*# sourceMappingURL=styles.css.map */

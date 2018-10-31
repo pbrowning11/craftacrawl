@@ -173,7 +173,7 @@ module.exports = function (app) {
   });
   app.get("/api/neighborhood/:hood", function (req, res) {
     console.log(req.params.hood);
-    
+
     db.Bar.findAll({
       where: {
         neighborhood: req.params.hood
@@ -197,9 +197,17 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/logout", function(req, res){
+  app.get("/logout", function(req, res) {
     req.logout();
     req.session.destroy();
     res.redirect("/")
+  });
+
+  app.post("/submit", function(req, res) {
+    db.submittedBar.create(
+      req.body
+    ).then(function(newBar) {
+      res.json(newBar);
+    })
   })
 };
