@@ -47,7 +47,11 @@ function toDatabase() {
       window.location.href = "/crawl/"+groupname;
     });
 }
-
+function toWhere(){
+  let wher = $("#chooseNeighborhood").val()
+  console.log(wher)
+  window.location.href = "/crawl/"+wher;
+}
 function loadBarSelection() {
   let choice = $("#neighborhood").val();
   if (choice === "Brewery"||choice === "Club"||choice === "Cocktail"||choice === "Cocktails"||choice === "Neighborhood"){
@@ -62,3 +66,8 @@ $("#barSubmit").click( function(event) {
   event.preventDefault();
   toDatabase()
 })
+$("#predefined").click( function(event) {
+  event.preventDefault();
+  toWhere()
+})
+
