@@ -9,7 +9,7 @@ passport.use(new LocalStrategy(
   {
     usernameField: "email"
   },
-  function(email, password, done) {
+  function(email, Password, done) {
     // When a user tries to sign in this code runs
     db.User.findOne({
       where: {
@@ -23,7 +23,7 @@ passport.use(new LocalStrategy(
         });
       }
       // If there is a user with the given email, but the password the user gives us is incorrect
-      else if (!dbUser.validPassword(password)) {
+      else if (!dbUser.validPassword(Password)) {
         return done(null, false, {
           message: "Incorrect password."
         });
