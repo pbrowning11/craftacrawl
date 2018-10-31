@@ -1,22 +1,79 @@
 <!DOCTYPE html>
-<html>
- 
+<html lang="en">
 <head>
-    <title></title>
-</head>
- 
-<body>
-    <form id="signin" name="signin">
-        <label for="email">Email Address</label>
-        <input type="text" id="emailSignIn" />
-        <label for="password">Password</label>
-        <input type="password" id="pWordSignIn"/>
-        <button class="btn" id="buttonSignIn">Sign In</button>
-    </form>
- 
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/signin.js"></script>
+  <title>Craft-A-Crawl</title>
+
+  <!-- Links for Bulma, Fontawesome and my custom CSS respectively -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+
+  <!-- Added Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=">
+
+</head>
+<body id="backdrop">
+<nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <a href="/" class="navbarLinks is-size-5">HOME</a>
+      </div>
+      <div class="navbar-item">
+        <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
+      </div>
+      <div class="buttons m-r-md">
+        <a href="/signup" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Sign-up &nbsp;&nbsp;</a>
+        <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="m-b-lg m-t-xl columns is-centered">
+  <div class="column is-half has-text-centered">
+    <p id="regTitle" class="has-text-weight-semibold">Login</p>
+  </div>
+</div>
+<div class="columns is-centered">
+  <div class="column is-one-quarter has-text-centered">
+    <form id="signin" name="signin">
+      <label for="emailSignIn" class="email">E-Mail</label>
+      <div class="field">
+        <div class="control">
+          <input id="emailSignIn" name="email" class="input is-info is-fullwidth is-rounded is-large m-t-md m-b-lg phColor"
+                 type="email">
+        </div>
+      </div>
+      <label for="pWordSignIn" class="category">Password</label>
+      <div class="field">
+        <div class="control">
+          <input id="pWordSignIn" name="pWord" class="input is-info is-fullwidth is-rounded is-large m-t-md m-b-lg phColor"
+                 type="password">
+        </div>
+      </div>
+      <button id="buttonSignIn" class="button is-medium is-rounded is-outlined is-info m-t-lg">&nbsp;&nbsp;Submit&nbsp;&nbsp;</button>
+    </form>
+  </div>
+</div>
+
+<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+<script></script>
+<script type="text/javascript" src="/js/signin.js"></script>
+<script src="/js/navbarJS.js"></script>
 </body>
- 
 </html>

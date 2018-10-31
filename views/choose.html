@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Choose A Crawl</title>
+  <title>Craft-A-Crawl</title>
 
   <!-- Links for Bulma, Fontawesome and my custom CSS respectively -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
@@ -36,7 +36,7 @@
         <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
       </div>
       <div class="buttons m-r-md">
-        <a id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+        <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
       </div>
     </div>
   </div>
@@ -51,20 +51,27 @@
   <div class="column is-one-quarter has-text-centered">
     <form>
 
-      <label for="neighborhood" class="neighborhood">Neighborhood</label>
+      <label for="chooseNeighborhood" class="neighborhood">Neighborhood</label>
       <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
-        <select class="has-text-info" name="neighborhood" id="neighborhood">
-          <option value="error">Select an option</option>
+        <select class="has-text-info" name="chooseNeighborhood" id="chooseNeighborhood">
+          <option value="">Select an option</option>
           <option value="noda">NoDa</option>
+          <option value="plazamidwood">Plaza Midwood</option>
+          <option value="dilworth">Dilworth</option>
+          <option value="southend">Southend</option>
+          <option value="uptownfirstward">Uptown, First Ward</option>
+          <option value="uptownsecondward">Uptown, Second Ward</option>
+          <option value="uptownthirdward">Uptown, Third Ward</option>
+          <option value="uptownfourthward">Uptown, Fourth Ward</option>
         </select>
       </div>
 
-      <label for="numberOf" class="numberOf">Choose A Crawl</label>
+      <label for="routeChoice" class="numberOf">Choose A Crawl</label>
       <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
-        <select class="has-text-info" name="route" id="route">
+        <select class="has-text-info" name="route" id="routeChoice">
           <option value="error">Select an option</option>
-          <option value="1">NoDa Route 1</option>
-          <option value="1">NoDa Route 2</option>
+          <option value="1">Route 1</option>
+          <option value="1">Route 2</option>
 
         </select>
       </div>
@@ -73,7 +80,8 @@
     </form>
   </div>
 </div>
-
+<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
 <script src="/js/index.js"></script>
 <script src="/js/navbarJS.js"></script>
 </body>

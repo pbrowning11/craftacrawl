@@ -336,3 +336,15 @@ body {
   font-size: 42px;
   color: hsl(204, 86%, 53%);
 }
+
+.handlebarName {
+  font-size: 26px;
+}
+
+.handlebarBody {
+  font-size: 22px;
+}
+
+.email {
+  padding-right: 19.3rem;
+}

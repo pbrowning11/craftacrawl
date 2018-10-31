@@ -1,10 +1,23 @@
-const isAuthenticated = require("../config/middleware/isAuthenticated");
-const db = require("../models");
-const path = require("path");
+var db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+var path = require("path");
 
-module.exports = function (app) {
-
-  app.get("/", function (req, res) {
+module.exports = function(app) {
+  app.get("/signup", function(req, res) {
+    if (req.user) {
+      res.redirect("/")
+    } else {
+      res.sendFile(path.join(__dirname, "../views/signup.html"));
+    }
+  });
+  app.get("/login", function(req, res) {
+    if (req.user) {
+      res.redirect("/") //logged in home page
+    } else {
+      res.sendFile(path.join(__dirname, "../views/signin.html"));
+    }
+  });
+  app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../views/home.html"));
   });
   app.get("/submit", function (req, res) {

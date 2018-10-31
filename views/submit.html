@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Submit</title>
+  <title>Craft-A-Crawl</title>
 
   <!-- Links for Bulma, Fontawesome and my custom CSS respectively -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
@@ -39,7 +39,7 @@
         <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
       </div>
       <div class="buttons m-r-md">
-        <a id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+        <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
       </div>
     </div>
   </div>
@@ -53,7 +53,6 @@
 <div class="columns is-centered">
   <div class="column is-one-quarter has-text-centered">
     <form>
-
       <label for="Bar-Name" class="barName">Bar Name</label>
       <div class="field">
         <div class="control">
@@ -61,39 +60,19 @@
                  placeholder="Bar Name">
         </div>
       </div>
-      <label for="Address" class="category">Address</label>
+      <label for="Address" class="neighborhood">Street Address</label>
       <div class="field">
         <div class="control">
           <input name="address" id="Address" class="input is-info is-fullwidth is-rounded is-large m-t-md m-b-lg phColor" type="text"
                  placeholder="Address">
         </div>
       </div>
-      <label for="Phone-Number" class="numberOf">Phone Number</label>
-      <div class="field">
-        <div class="control">
-          <input name="phoneNumber" id="Phone-Number" class="input is-info is-fullwidth is-rounded is-large m-t-md m-b-lg phColor" type="text"
-                 placeholder="555-555-5555">
-        </div>
-      </div>
-      <label for="E-Mail" class="yourEmail">Your E-Mail</label>
-      <div class="field">
-        <div class="control">
-          <input name="email" id="E-Mail" class="input is-info is-fullwidth is-rounded is-large m-t-md m-b-lg phColor" type="text"
-                 placeholder="Your E-Mail">
-        </div>
-      </div>
-      <label for="category" class="category2">Category</label>
-      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
-        <select class="has-text-info" name="category" id="category">
-          <option value="error">Select an option</option>
-          <option value="cocktail">Cocktail</option>
-        </select>
-      </div>
-      <button id="submitBarBtn" class="button is-medium is-rounded is-outlined is-info m-t-lg">&nbsp;&nbsp;Submit&nbsp;&nbsp;</button>
+      <a href="/thanks" id="submitBarBtn" class="button is-medium is-rounded is-outlined is-info m-t-lg">&nbsp;&nbsp;Submit&nbsp;&nbsp;</a>
     </form>
   </div>
 </div>
-
+<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
 <script src="/js/index.js"></script>
 <script src="/js/navbarJS.js"></script>
 </body>
