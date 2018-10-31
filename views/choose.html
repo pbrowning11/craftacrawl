@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="UTF-8">
@@ -9,80 +10,80 @@
 
   <!-- Links for Bulma, Fontawesome and my custom CSS respectively -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
-        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/styles/styles.css">
 
   <!-- Added Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=">
 
 </head>
-<body>
-<nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <a href="/" class="navbarLinks is-size-5">HOME</a>
-      </div>
-      <div class="navbar-item">
-        <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
-      </div>
-      <div class="buttons m-r-md">
-        <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+<body>
+  <nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="/" class="navbarLinks is-size-5">HOME</a>
+        </div>
+        <div class="navbar-item">
+          <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
+        </div>
+        <div class="buttons m-r-md">
+          <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+        </div>
       </div>
     </div>
+  </nav>
+
+  <div class="m-b-lg m-t-xl columns is-centered">
+    <div class="column is-half has-text-centered">
+      <p id="regTitle" class="has-text-weight-semibold">Choose a Crawl</p>
+    </div>
   </div>
-</nav>
+  <div class="columns is-centered">
+    <div class="column is-one-quarter has-text-centered">
+      <form>
 
-<div class="m-b-lg m-t-xl columns is-centered">
-  <div class="column is-half has-text-centered">
-    <p id="regTitle" class="has-text-weight-semibold">Choose a Crawl</p>
+        <label for="chooseNeighborhood" class="neighborhood">Neighborhood</label>
+        <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+          <select class="has-text-info" name="chooseNeighborhood" id="chooseNeighborhood">
+            <option value="">Select an option</option>
+            <option value="noda">NoDa</option>
+            <option value="plazamidwood">Plaza Midwood</option>
+            <option value="dilworth">Dilworth</option>
+            <option value="southend">Southend</option>
+            <option value="uptownfirstward">Uptown, First Ward</option>
+            <option value="uptownsecondward">Uptown, Second Ward</option>
+            <option value="uptownthirdward">Uptown, Third Ward</option>
+            <option value="uptownfourthward">Uptown, Fourth Ward</option>
+          </select>
+        </div>
+
+        <label for="routeChoice" class="numberOf">Choose A Crawl</label>
+        <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
+          <select class="has-text-info" name="route" id="routeChoice">
+            <option value="error">Select an option</option>
+            <option value="1">Route 1</option>
+            <option value="1">Route 2</option>
+
+          </select>
+        </div>
+
+        <button class="button is-medium is-rounded is-outlined is-info m-t-lg">&nbsp;&nbsp;Submit&nbsp;&nbsp;</button>
+      </form>
+    </div>
   </div>
-</div>
-<div class="columns is-centered">
-  <div class="column is-one-quarter has-text-centered">
-    <form>
-
-      <label for="chooseNeighborhood" class="neighborhood">Neighborhood</label>
-      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
-        <select class="has-text-info" name="chooseNeighborhood" id="chooseNeighborhood">
-          <option value="">Select an option</option>
-          <option value="noda">NoDa</option>
-          <option value="plazamidwood">Plaza Midwood</option>
-          <option value="dilworth">Dilworth</option>
-          <option value="southend">Southend</option>
-          <option value="uptownfirstward">Uptown, First Ward</option>
-          <option value="uptownsecondward">Uptown, Second Ward</option>
-          <option value="uptownthirdward">Uptown, Third Ward</option>
-          <option value="uptownfourthward">Uptown, Fourth Ward</option>
-        </select>
-      </div>
-
-      <label for="routeChoice" class="numberOf">Choose A Crawl</label>
-      <div class="select is-info is-fullwidth is-rounded is-large m-t-md m-b-lg">
-        <select class="has-text-info" name="route" id="routeChoice">
-          <option value="error">Select an option</option>
-          <option value="1">Route 1</option>
-          <option value="1">Route 2</option>
-
-        </select>
-      </div>
-
-      <button class="button is-medium is-rounded is-outlined is-info m-t-lg">&nbsp;&nbsp;Submit&nbsp;&nbsp;</button>
-    </form>
-  </div>
-</div>
-<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
-        crossorigin='anonymous'></script>
-<script src="/js/index.js"></script>
-<script src="/js/navbarJS.js"></script>
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/navbarJS.js"></script>
 </body>
+
 </html>
