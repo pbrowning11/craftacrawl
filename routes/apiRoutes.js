@@ -1,18 +1,19 @@
 var db = require("../models");
 var request = require("request");
 var passport = require("passport");
+var express = require("express")
+module.exports = function (app) {
 
-module.exports = function(app) {
-
-  app.post("/api/googleapi", function(req, res) {
+  app.post("/api/googleapi/", function (req, res) {
     var barArr = JSON.parse("[" + req.body.barList + "]");
+    var groupNam = req.body.crawlName
     var barArr2 = [];
     console.log("");
     console.log("These are the ids of the filtered bars from the database: " + barArr);
     var morePromises = [];
     var correctedArr = [];
 
-    barArr.forEach(function(bar) {
+    barArr.forEach(function (bar) {
       morePromises.push(
         db.Bar.findOne({
           where: {
@@ -20,13 +21,13 @@ module.exports = function(app) {
           }
         }));
     });
-    Promise.all(morePromises).then(function(res) {
-      res.forEach(element => {
+    Promise.all(morePromises).then(function (rest) {
+      rest.forEach(element => {
         barArr2.push(element.street + "," + element.zip);
       });
       console.log("Bar address array:");
       console.log(barArr2);
-
+      console.log("some info", req.body)
       // Google Maps API Query Start
       var apikey = "&key=AIzaSyDu0Qtc37kImb-6q2CGWi-T9DeM0s80ZIk&";
 
@@ -54,7 +55,7 @@ module.exports = function(app) {
       console.log("");
       console.log(queryUrl);
 
-      request(queryUrl, function(error, response, body) {
+      request(queryUrl, function (error, response, body) {
         if (error) {
           console.log("error:", error);
         }
@@ -80,38 +81,53 @@ module.exports = function(app) {
         correctedArr.push(barArr[1]);
         console.log("Adjusted Route:");
         console.log(correctedArr);
-      });
-    });
-  });
+        // pushIt(correctedArr,groupNam)
+        console.log("I made it all the way here")
 
-  app.post("/api/posts", function(req, res) {
-    console.log(req.body.barList);
-    db.Crawl.create({
-      crawlName: req.body.crawlName,
-      barList: req.body.barList.toString()
+
+        db.Crawl.create({
+          crawlName: groupNam,
+          barList: correctedArr.toString()
+        })
+          .then(function (dbcrawl) {
+            console.log(dbcrawl)
+            console.log("I made into the .then")
+            res.json(dbcrawl);
+          });
+      })
     })
-      .then(function(dbcrawl) {
-        res.json(dbcrawl);
-      });
+  })
 
-    console.log(req.body);
-    db.Crawl.create(req.body).then(function(dbcrawl) {
-      res.json(dbcrawl);
-    });
-  });
+  // function pushIt (finBarArr, crawlName) {
+  //   console.log("here")
+  //   console.log(finBarArr);
+
+  //   db.Crawl.create({
+  //     crawlName: crawlName,
+  //     barList: finBarArr.toString()
+  //   })
+  //     .then(function (dbcrawl) {
+  //       //res.json(dbcrawl);
+  //     });
+
+  //   // console.log(req.body);
+  //   // db.Crawl.create(req.body).then(function (dbcrawl) {
+  //   //   res.json(dbcrawl);
+  //   // });
+  // };
 
 
-  app.get("/crawl/:crawl", function(req, res) {
+  app.get("/crawl/:crawl", function (req, res) {
     db.Crawl.findOne({
       where: {
         crawlName: req.params.crawl
       }
-    }).then(function(crawlInfo) {
+    }).then(function (crawlInfo) {
       var barArray = [];
       var promises = [];
       var crawlArray = JSON.parse("[" + crawlInfo.dataValues.barList + "]");
       console.log(crawlArray);
-      crawlArray.forEach(function(position) {
+      crawlArray.forEach(function (position) {
         promises.push(
           db.Bar.findOne({
             where: {
@@ -119,7 +135,7 @@ module.exports = function(app) {
             }
           }));
       });
-      Promise.all(promises).then(function(barsAr) {
+      Promise.all(promises).then(function (barsAr) {
         console.log(barArray);
         res.render("results", {
           bars: barsAr
@@ -134,7 +150,7 @@ module.exports = function(app) {
   }));
 
 
-  app.post("/api/signup", function(req, res) {
+  app.post("/api/signup", function (req, res) {
     var newUser = req.body.data;
     console.log(req.body.data);
     db.User.findOrCreate({
@@ -146,20 +162,20 @@ module.exports = function(app) {
         lastName: newUser.lastName,
         Password: newUser.password
       }
-    }).then(function() {
+    }).then(function () {
       res.redirect(307, "/api/signin");
-    }).catch(function(err) {
+    }).catch(function (err) {
       console.log(err);
       res.json(err);
     });
   });
-  app.get("/api/neighborhood/:hood", function(req, res) {
+  app.get("/api/neighborhood/:hood", function (req, res) {
     console.log(req.params.hood);
     db.Bar.findAll({
       where: {
         neighborhood: req.params.hood
       }
-    }).then(function(sendthehood) {
+    }).then(function (sendthehood) {
       res.render("hood", {
         hood: sendthehood
       });
