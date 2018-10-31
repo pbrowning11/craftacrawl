@@ -7,11 +7,9 @@ module.exports = function (app) {
   app.post("/api/googleapi/", function (req, res) {
     var barArr = JSON.parse("[" + req.body.barList + "]");
     var groupNam = req.body.crawlName
-
     var barArr2 = [];
     console.log("");
     console.log("These are the ids of the filtered bars from the database: " + barArr);
-
     var morePromises = [];
     var correctedArr = [];
 
