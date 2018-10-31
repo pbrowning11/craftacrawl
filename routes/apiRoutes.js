@@ -144,11 +144,25 @@ module.exports = function (app) {
     });
   });
 
-  app.post("/api/signin", passport.authenticate("local", {
-    successRedirect: "/",
-    failureRedirect: "/login"
-  }));
+  app.post("/api/signin", passport.authenticate("local"), function(req, res) {
+    // successRedirect: "/",
+    // failureRedirect: "/login"
+    console.log(req.body)
+  });
 
+  // app.get("api/signin", function(req, res) {
+  //   db.User.findOne({
+  //     where: {
+  //       email: req.body.email
+  //     }
+  //   }).then(function(user) {
+  //     if (user.password === req.body.password) {
+  //       res.redirect("/")
+  //     } else {
+  //       res.redirect("/login")
+  //     }
+  //   })
+  // })
 
   app.post("/api/signup", function (req, res) {
     var newUser = req.body.data;
@@ -171,6 +185,7 @@ module.exports = function (app) {
   });
   app.get("/api/neighborhood/:hood", function (req, res) {
     console.log(req.params.hood);
+    
     db.Bar.findAll({
       where: {
         neighborhood: req.params.hood
