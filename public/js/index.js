@@ -50,7 +50,11 @@ function toDatabase() {
 
 function loadBarSelection() {
   let choice = $("#neighborhood").val();
-  window.location.assign ( "/api/neighborhood/" + choice);
+  if (choice === "Brewery"||choice === "Club"||choice === "Cocktail"||choice === "Cocktails"||choice === "Neighborhood"){
+    window.location.href = "/api/category/" + choice;
+  }
+  else{
+  window.location.href = "/api/neighborhood/" + choice;}
 }
 
 $("#createCrawlBtn").on("click", loadBarSelection);
