@@ -1,0 +1,158 @@
+$primaryBlue: hsl(204, 86%, 53%);
+
+$sizeUnit: rem;
+$marginKey: 'm';
+$paddingKey: 'p';
+$separator: '-';
+$sizes: (
+    ('none', 0),
+    ('xxs', 0.125),
+    ('xs', 0.25),
+    ('sm', 0.5),
+    ('md', 1),
+    ('lg', 2),
+    ('xl', 4),
+    ('xxl', 8),
+);
+$positions: (
+    ('t', 'top'),
+    ('r', 'right'),
+    ('b', 'bottom'),
+    ('l', 'left')
+);
+
+@function sizeValue($key, $value) {
+    @return if($key == 'none', 0, $value + $sizeUnit);
+}
+
+@each $size in $sizes {
+    $sizeKey: nth($size, 1);
+    $sizeValue: nth($size, 2);
+    .#{$marginKey}#{$separator}#{$sizeKey} {
+        margin: sizeValue($sizeKey, $sizeValue);
+    }
+    .#{$paddingKey}#{$separator}#{$sizeKey} {
+        padding: sizeValue($sizeKey, $sizeValue);
+    }
+    @each $position in $positions {
+        $posKey: nth($position, 1);
+        $posValue: nth($position, 2);
+        .#{$marginKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey} {
+            margin-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+        }
+        .#{$paddingKey}#{$separator}#{$posKey}#{$separator}#{$sizeKey} {
+            padding-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+        }
+    }
+}
+
+#loginBtn {
+  border: solid 1px $primaryBlue;
+  color: $primaryBlue;
+  border-radius: 4px;
+}
+
+#signupBtn {
+  border: solid 1px $primaryBlue;
+  color: $primaryBlue;
+  border-radius: 4px;
+}
+
+#homeTitle {
+  color: $primaryBlue;
+  font-size: 46px;
+  margin-top: 12rem;
+  font-family: "Georgia", serif;
+}
+
+#regTitle {
+  font-size: 46px;
+  font-family: "Georgia", serif;
+}
+
+#subTitle {
+  color: $primaryBlue;
+  font-size: 26px;
+}
+
+#titleContainer {
+  margin-bottom: 12rem;
+}
+
+.crawlChoice {
+  color: $primaryBlue;
+  border: none;
+  font-size: 20px;
+}
+
+.plus {
+  font-size: 32px;
+  margin-left: 10rem;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#backdrop {
+  background: rgba(194, 223, 255, 0.45)
+}
+
+.navbarLinks {
+  color: $primaryBlue;
+}
+
+.neighborhood {
+  font-size: 16px;
+  padding-right: 15.8rem;
+}
+
+.category {
+  font-size: 16px;
+  padding-right: 18.2rem;
+}
+
+.numberOf {
+  font-size: 16px;
+  padding-right: 14.9rem;
+}
+
+.phColor::placeholder {
+  color: $primaryBlue;
+  opacity: 0.5;
+}
+
+.barName {
+  padding-right: 17.6rem;
+}
+
+.yourEmail {
+  padding-right: 16.5rem;
+}
+
+.category2 {
+   padding-right: 17.4rem;
+}
+
+.title404 {
+  font-size: 108px;
+}
+
+.subtitle404 {
+  font-size: 42px;
+  color: $primaryBlue;
+}
+
+.handlebarName {
+  font-size: 26px;
+}
+
+.handlebarBody {
+  font-size: 22px;
+}
+
+.email {
+  padding-right: 19.3rem;
+}
