@@ -17,13 +17,12 @@
         width: 700px;
       }
 
-      /* Optional: Makes the sample page fill the window. */
       html,
       body {
         height: 100%;
         margin: 0;
         padding: 0;
-        background: rgb(24,67,76);
+        background: rgb(24, 67, 76);
       }
 
       #floating-panel {
@@ -56,26 +55,31 @@
             }
           });
           directionsDisplay.setMap(map);
-
           var onLoadHandler = function () {
             calculateAndDisplayRoute(directionsService, directionsDisplay);
           };
           document.onLoad = onLoadHandler();
-          document.onLoad = onLoadHandler();
+         // document.onLoad = onLoadHandler();
         }
         
-
         function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           var waypoints = [];
+          count = 0 
           {{#each bars}}
+            count++
           waypoints.push({
             location: "{{street}}, Charlotte, NC",
             stopover: true,
           });
-          {{/each}};          
+          {{/each}};  
+          console.log(count) 
+          var start = waypoints[0].location + ", charlotte, nc"
+          var fin =  waypoints[waypoints.length-1].location + ", charlotte, nc"   
+          waypoints.length = waypoints.length-1
+          waypoints.shift(); 
           directionsService.route({
-            origin: waypoints[0].location + ", charlotte, nc",
-            destination: waypoints[waypoints.length - 1].location + ", charlotte, nc",
+            origin: start,
+            destination: fin,
             waypoints: waypoints,
             optimizeWaypoints: true,
             travelMode: "WALKING",
