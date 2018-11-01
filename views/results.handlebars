@@ -7,6 +7,15 @@
       <p class="handlebarBody">Phone Number: {{phone}}</p>
     </div>
     {{/each}}
+    <center>
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_email"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_sms"></a>
+    </div></center>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
   </div>
   <div id="mapDiv" class="column">
     <style>
@@ -39,9 +48,6 @@
         padding-left: 10px;
       }
     </style>
-    </head>
-
-    <body>
       <div id="map"></div>
       <script>
         var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -73,7 +79,11 @@
             location: "{{street}}, Charlotte, NC",
             stopover: true,
           });
-          {{/each}};  
+          {{/each}}; 
+          for (let i = 0; i < count; i++) {
+            $( "#"+i ).prepend( labels[i]+": " ) 
+  
+          }
           console.log(count) 
           var start = waypoints[0].location + ", charlotte, nc"
           var fin =  waypoints[waypoints.length-1].location + ", charlotte, nc"   
@@ -91,10 +101,12 @@
             } else {
               window.alert('Directions request failed due to ' + status);
             }
+          });
+        }
+       // <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world"> <i class="fab fa-twitter-square"></i></a>
       </script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu0Qtc37kImb-6q2CGWi-T9DeM0s80ZIk&callback=initMap">
       </script>
-    </body>
 
   </div>
 </div>
