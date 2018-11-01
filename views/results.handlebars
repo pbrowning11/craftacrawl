@@ -2,7 +2,7 @@
   <div class="column has-text-centered handlebars">
     {{#each bars}}
     <div class="m-b-lg has-text-centered">
-      <p class="handlebarName has-text-weight-semibold">{{name}}</p>
+      <p class="handlebarName has-text-weight-semibold"id="{{@index}}">{{name}}</p>
       <p class="handlebarBody">Street Address: {{street}}</p>
       <p class="handlebarBody">Phone Number: {{phone}}</p>
     </div>
@@ -44,6 +44,8 @@
     <body>
       <div id="map"></div>
       <script>
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var labelIndex = 0;
         function initMap() {
           var directionsService = new google.maps.DirectionsService;
           var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -89,8 +91,6 @@
             } else {
               window.alert('Directions request failed due to ' + status);
             }
-          });
-        }
       </script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu0Qtc37kImb-6q2CGWi-T9DeM0s80ZIk&callback=initMap">
       </script>
