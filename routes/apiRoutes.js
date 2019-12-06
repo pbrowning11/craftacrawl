@@ -2,6 +2,7 @@ var db = require("../models");
 var request = require("request");
 var passport = require("../config/passport");
 var express = require("express")
+require('dotenv').config()
 module.exports = function (app) {
 
   app.post("/api/googleapi/", function (req, res) {
@@ -29,7 +30,7 @@ module.exports = function (app) {
       console.log(barArr2);
       console.log("some info", req.body)
       // Google Maps API Query Start
-      var apikey = "&key=AIzaSyDu0Qtc37kImb-6q2CGWi-T9DeM0s80ZIk&";
+      var apikey = `&key=${process.env.APIKEY}&`;
 
       // Wanna learn how to use parameters as an object...
       // var params = {
