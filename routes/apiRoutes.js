@@ -211,4 +211,12 @@ module.exports = function (app) {
       res.json(newBar);
     })
   })
+  app.get("/api/loginCheck",(req, res)=>{
+    console.log("checking")
+    if(req.user){
+      res.send({login: true})
+    }else{
+      res.send({login: false})
+    }
+  })
 };

@@ -471,7 +471,9 @@ p {
   color: #f0c808;
   border-color: #f0c808;
 }
-
+#auth{
+  display: none;
+}
 .input,
 .textarea {
   background-color: #18434c;
