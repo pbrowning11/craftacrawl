@@ -1,112 +1,29 @@
-<div class="columns m-t-xl">
-  <div class="column has-text-centered handlebars">
+<link rel="stylesheet" href="/styles/results.css">
+<div class="gridContainer">
+  <div id="mapDiv" class="">
+    <div id="map"></div>
+  </div>
+  <div data-location={{whereAt}} class="resultsArea">
     {{#each bars}}
-    <div class="m-b-lg has-text-centered">
-      <p class="handlebarName has-text-weight-semibold"id="{{@index}}">{{name}}</p>
-      <p class="handlebarBody">Street Address: {{street}}</p>
+    <div id="barz{{@index}}" class="m-b-lg has-text-centered">
+      <p class="handlebarName has-text-weight-semibold" id="bar{{@index}}">{{name}}</p>
+      <p class="handlebarBody">Street Address: <span class="address">{{street}} </span></p>
       <p class="handlebarBody">Phone Number: {{phone}}</p>
     </div>
     {{/each}}
-    <center>
-    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+
+  </div>
+  <div class="bottom">
+    <div class="another a2a_kit a2a_kit_size_32 a2a_default_style">
       <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
       <a class="a2a_button_email"></a>
       <a class="a2a_button_facebook"></a>
       <a class="a2a_button_twitter"></a>
       <a class="a2a_button_sms"></a>
-    </div></center>
-    <script async src="https://static.addtoany.com/menu/page.js"></script>
-  </div>
-  <div id="mapDiv" class="column">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 600px;
-        width: 700px;
-      }
-
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background: rgb(24, 67, 76);
-      }
-
-      #floating-panel {
-        position: absolute;
-        top: 10px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto', 'sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
-    </style>
-      <div id="map"></div>
-      <script>
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var labelIndex = 0;
-        function initMap() {
-          var directionsService = new google.maps.DirectionsService;
-          var directionsDisplay = new google.maps.DirectionsRenderer;
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 13,
-            center: {
-              lat: 35.22,
-              lng: -80.84
-            }
-          });
-          directionsDisplay.setMap(map);
-          var onLoadHandler = function () {
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
-          };
-          document.onLoad = onLoadHandler();
-         // document.onLoad = onLoadHandler();
-        }
-        
-        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-          var waypoints = [];
-          count = 0 
-          {{#each bars}}
-            count++
-          waypoints.push({
-            location: "{{street}}, Charlotte, NC",
-            stopover: true,
-          });
-          {{/each}}; 
-          for (let i = 0; i < count; i++) {
-            $( "#"+i ).prepend( labels[i]+": " ) 
-  
-          }
-          console.log(count) 
-          var start = waypoints[0].location + ", charlotte, nc"
-          var fin =  waypoints[waypoints.length-1].location + ", charlotte, nc"   
-          waypoints.length = waypoints.length-1
-          waypoints.shift(); 
-          directionsService.route({
-            origin: start,
-            destination: fin,
-            waypoints: waypoints,
-            optimizeWaypoints: true,
-            travelMode: "WALKING",
-          }, function (response, status) {
-            if (status === "OK") {
-              directionsDisplay.setDirections(response);
-            } else {
-              window.alert('Directions request failed due to ' + status);
-            }
-          });
-        }
-       // <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world"> <i class="fab fa-twitter-square"></i></a>
-      </script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfEf1NYscP1Dt2SiXXBr8y4SVddasmzHw&callback=initMap">
-      </script>
-
+    </div>
   </div>
 </div>
+<script src="/js/results.js"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfEf1NYscP1Dt2SiXXBr8y4SVddasmzHw&callback=initMap"></script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>

@@ -1,0 +1,73 @@
+#map {
+  height: 90%;
+  width: 90%;
+  margin-right: 2%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: rgb(24, 67, 76);
+}
+.navbar{
+  max-height: 15%;
+}
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto', 'sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+.resultsArea{
+  grid-area: left;
+
+}
+#mapDiv{
+  display: flex;
+  min-height: 300px;
+  grid-area: main;
+  justify-content: center;
+}
+#map{
+}
+.bottom{
+  grid-area: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.lineT{
+  text-decoration: line-through;
+  text-decoration-color: #f0c808
+}
+.gridContainer{
+padding-top: 5%;
+  display:flex;
+  flex: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-areas: 
+  'left left main main main'
+  'end end end end end';
+}
+@media screen and (max-width: 774px){
+  .gridContainer{
+    padding-top: 7%;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: repeat(1,100%);
+    grid-template-areas: 
+    'main''left''end'
+    
+  }
+
+}
