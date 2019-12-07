@@ -2,6 +2,9 @@
   "name": "node-handlebars-boilerplate",
   "version": "1.0.0",
   "description": "Project 2 Starter",
+  "engines": {
+    "node": "12.13.1"
+  },
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -11,20 +14,21 @@
   },
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
-    "dotenv": "^6.0.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "local": "^0.3.3",
     "mysql2": "^1.5.3",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.13.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-session": "^1.0.2",
     "request": "^2.88.0",
-    "sequelize": "^4.38.0"
+    "sequelize": "^4.44.3"
   },
   "devDependencies": {
     "chai": "^4.1.2",

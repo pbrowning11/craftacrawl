@@ -36,6 +36,9 @@
 <body>
   <nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
+      <a class="navbar-item is-size-2 navbarLinks m-l-lg" href="/">
+        <i class="fas fa-city"></i>
+      </a>
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -51,12 +54,17 @@
         <div class="navbar-item">
           <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
         </div>
-        <div class="buttons m-r-md">
-          <a id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+        <div id="notAuth" class="buttons m-r-md">
+          <a href="/signup" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Sign-up &nbsp;&nbsp;</a>
+          <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+        </div>
+        <div id="auth" class="buttons m-r-md">
+          <a href="/logout" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Logout &nbsp;&nbsp;</a>
         </div>
       </div>
     </div>
   </nav>
+
 
   <div id="map"></div>
   <script>
@@ -72,9 +80,9 @@
       });
     }
   </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu0Qtc37kImb-6q2CGWi-T9DeM0s80ZIk&callback=initMap" async defer></script>
-  <script src="../public/js/index.js"></script>
-  <script src="../public/js/navbarJS.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfEf1NYscP1Dt2SiXXBr8y4SVddasmzHw&callback=initMap" async defer></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/navbarJS.js"></script>
 </body>
 
 </html>

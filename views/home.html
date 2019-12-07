@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +13,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/styles/styles.css">
-
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <!-- Added Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo">
 
@@ -39,9 +43,12 @@
         <div class="navbar-item">
           <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
         </div>
-        <div class="buttons m-r-md">
+        <div id="notAuth" class="buttons m-r-md">
           <a href="/signup" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Sign-up &nbsp;&nbsp;</a>
           <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+        </div>
+        <div id="auth" class="buttons m-r-md">
+          <a href="/logout" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Logout &nbsp;&nbsp;</a>
         </div>
       </div>
     </div>
@@ -66,8 +73,8 @@
     </div>
   </div>
 
-  <script src="/js/index.js"></script>
-  <script src="/js/navbarJS.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/navbarJS.js"></script>
 </body>
 
 </html>

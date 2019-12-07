@@ -13,6 +13,14 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1]
       }
+    },
+    owner:{
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
+    position:{
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     }
   });
   return Crawl;

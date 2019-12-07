@@ -14,34 +14,42 @@
   <!-- Added Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-</head>
-<body class="handlebars">
-<nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <a href="/" class="navbarLinks is-size-5">HOME</a>
-      </div>
-      <div class="navbar-item">
-        <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
-      </div>
-      <div class="buttons m-r-md">
-        <a href="/signup" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Sign-up &nbsp;&nbsp;</a>
-        <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
-      </div>
-    </div>
-  </div>
-</nav>
-  {{{body}}}
   <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
           crossorigin='anonymous'></script>
+</head>
+<body class="handlebars">
+ <nav class="navbar p-b-md p-t-md" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item is-size-2 navbarLinks m-l-lg" href="/">
+        <i class="fas fa-city"></i>
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="/" class="navbarLinks is-size-5">HOME</a>
+        </div>
+        <div class="navbar-item">
+          <a href="/submit" class="navbarLinks m-r-xl is-size-5">SUBMIT A BAR</a>
+        </div>
+        <div id="notAuth" class="buttons m-r-md">
+          <a href="/signup" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Sign-up &nbsp;&nbsp;</a>
+          <a href="/login" id="loginBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Login &nbsp;&nbsp;</a>
+        </div>
+        <div id="auth" class="buttons m-r-md">
+          <a href="/logout" id="signupBtn" class="button navbarLinks is-size-6">&nbsp;&nbsp; Logout &nbsp;&nbsp;</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {{{body}}}
   <script src="/js/index.js"></script>
  <script src="/js/navbarJS.js"></script>
 </body>

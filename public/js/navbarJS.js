@@ -21,5 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  $.get("/api/loginCheck",(status)=>{
+    console.log(status)
+  
+    if(status.login){
+      $("#auth").show()
+      $("#notAuth").hide()
+    }
+  })
 
 });

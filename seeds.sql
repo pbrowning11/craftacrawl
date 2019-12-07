@@ -1,4 +1,4 @@
 USE craftacrawldb;
-INSERT INTO crawls (crawlName, barList)
+INSERT INTO Crawls (crawlName, barList)
 VALUES ("NoDa", "2, 3, 4 , 6, 7, 8, 9"),("Plaza1","17,18,19,23,24,25"),("Plaza2","25,26,27,28,29,30,31"),("Dilworth","37,36,38,39,40"),("Southend1","52,53,42,44,45,47,48"),
 ("Westside","129, 130, 131, 132, 133, 134, 135, 136"),("FourhWard","89,92,94,95,96,97,98,99"),("ThirdWard","120, 121, 124, 125,127,128"),("SecondWard","102, 103, 104, 105, 106, 108, 110"),("FirstWard","73,74,75,78,80,81,82"),("Brewery1","63,64,66,60,65,58,59"),("BlueLineBar","55,56,58,51,46,47,48"),("Southend2","55,56,57,61,62")
